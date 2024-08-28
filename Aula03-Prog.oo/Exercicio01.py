@@ -1,13 +1,14 @@
 class Sistema:
     def __init__(self):
-        self.hotel=Hotel(self,nomeHotel,listaQuartos,listaReservas)
-        self.cliente=Cliente(self,idCliente,nome,CPF,numero)
-        self.reserva=Reserva(self,idReserva,dataInicio,dataFim)
-        self.quarto=Quarto(self,N,status)
-    def menu(self):
+        self.hotel=None
+        #self.cliente=Cliente(self,idCliente,nome,CPF,numero)
+        #self.reserva=Reserva(self,idReserva,dataInicio,dataFim)
+        #self.quarto=Quarto(self,N,status)
+    def menu(self,nomeHotel):
         fechar=False
         print('seja bem-vindo ao sistema do hotel',nomeHotel,'!')
         while fechar!=True:
+
             print('-MENU-')
             print('Realizar Reserva ---> 1')
             print('Realizar Check-In --> 2')
@@ -30,11 +31,19 @@ class Sistema:
                 fechar=True
                 print('Encerrando Sistema...')
 
+    def criarhotel(self):
+        #tributos fixos do hotel
+        self.nomeHotel='Viridis Agro'
+        self.listaQuartos=(101,102,103,104,201,202,203,204,301,302,303,304)
+        self.listaReservas=()
+        self.hotel=Hotel
+
+#construtores classes hotel,cliente,reserva,quarto
 class Hotel:
     def __init__(self,nomeHotel,listaQuartos,listaReservas):
         self.nomeHotel=str(nomeHotel)
-        self.listaQuartos=[listaQuartos]
-        self.listaReservas=[listaReservas]
+        self.listaQuartos=(listaQuartos)
+        self.listaReservas=(listaReservas)
 
 class Cliente:
     def __init__(self,idCliente,nome,CPF,numero):
@@ -58,15 +67,8 @@ def ReservasHotel(self):
     nome=input('digite seu Nome: ')
     Cpf=input('digite seu CPF')
 
-
-#VARIAVEIS
-#hotel
-nomeHotel='Viridis Agro'
-listaQuartos=[101,102,103,104,201,202,203,204,301,302,303,304]
-listaReservas=[]
-
-#cliente
-
-#MAIN
+#start
 sistema=Sistema()
+sistema.criarhotel()
 sistema.menu()
+
