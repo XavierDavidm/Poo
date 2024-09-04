@@ -69,6 +69,6 @@ def ReservasHotel(self):
 
 #start
 sistema=Sistema()
-sistema.criarhotel()
+sistema.criarhotel(nomeHotel)
 sistema.menu()
 
